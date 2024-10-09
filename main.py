@@ -31,7 +31,7 @@ async def main():
     ) for index, row in dup.iterrows()]
 
     chats = [AsyncGPT3ProbBackendLowTemp(system, user) for user in users]
-    chat_queue = AsyncChatQueue(chats, concurrent_n=50)
+    chat_queue = AsyncChatQueue(chats, concurrent_n=40)
     res = await chat_queue.get_response()
     txt = [item[0] for item in res]
     probs = [item[1] for item in res]
