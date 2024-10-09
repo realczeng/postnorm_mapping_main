@@ -26,10 +26,10 @@ jobs:
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
-        python main.py iter3 2019
+        python main.py iter4 1979
         tar -czvf results.tar.gz classified_*.csv
     - name: Release
       uses: softprops/action-gh-release@v2
       with:
         files: results.tar.gz
-        tag_name: iter3_2019
+        tag_name: iter4_1979
